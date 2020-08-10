@@ -4,9 +4,11 @@
 #
 ################################################################################
 
-LIBDRM_VERSION = 2.4.102
-LIBDRM_SOURCE = libdrm-$(LIBDRM_VERSION).tar.xz
-LIBDRM_SITE = https://dri.freedesktop.org/libdrm
+#LIBDRM_VERSION = 2.4.102
+#LIBDRM_SOURCE = libdrm-$(LIBDRM_VERSION).tar.xz
+#LIBDRM_SITE = https://dri.freedesktop.org/libdrm
+LIBDRM_VERSION = master
+LIBDRM_SITE = $(call github,yoshigion,libdrm-sun4i,$(LIBDRM_VERSION))
 LIBDRM_LICENSE = MIT
 LIBDRM_INSTALL_STAGING = YES
 
