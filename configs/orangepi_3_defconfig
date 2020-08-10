@@ -30,7 +30,8 @@ BR2_TARGET_UBOOT_SPL_NAME="u-boot-sunxi-with-spl.bin"
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
 BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,orangepi-xunlong,mainline_kernel,orangepi-h6)/mainline_kernel_orangepi-h6.tar.gz"
-BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG=y
+BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
+BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/orangepi/orangepi-3/linux-defconfig"
 BR2_LINUX_KERNEL_DTS_SUPPORT=y
 BR2_LINUX_KERNEL_INTREE_DTS_NAME="allwinner/sun50i-h6-orangepi-3"
 BR2_LINUX_KERNEL_NEEDS_HOST_OPENSSL=y
@@ -51,6 +52,14 @@ BR2_ROOTFS_POST_IMAGE_SCRIPT="support/scripts/genimage.sh"
 BR2_ROOTFS_POST_SCRIPT_ARGS="-c board/orangepi/orangepi-3/genimage.cfg"
 BR2_ROOTFS_POST_BUILD_SCRIPT="board/orangepi/orangepi-3/post-build.sh"
 BR2_ROOTFS_OVERLAY="board/orangepi/orangepi-3/rootfs_overlay"
+
+# Video Acceleration
+BR2_PACKAGE_LIBVA_UTILS=y
+BR2_PACKAGE_LIBDRM_INSTALL_TESTS=y
+BR2_PACKAGE_LIBVA_V4L2_REQUEST=y
+BR2_PACKAGE_KMOD=y
+BR2_PACKAGE_UTIL_LINUX=y
+BR2_PACKAGE_UTIL_LINUX_LIBBLKID=y
 
 # wireless firmware
 BR2_PACKAGE_LINUX_FIRMWARE=y
