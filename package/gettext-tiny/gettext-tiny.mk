@@ -81,6 +81,7 @@ define HOST_GETTEXT_TINY_INSTALL_CMDS
 	$(SED) '/read dummy/d' $(@D)/gettextize
 
 	$(INSTALL) -m 0755 -D $(@D)/gettextize $(HOST_DIR)/bin/gettextize
+	$(INSTALL) -m 0755 -D $(@D)/autopoint $(HOST_DIR)/bin/autopoint
 	$(INSTALL) -m 0644 -D $(@D)/build-aux/config.rpath $(HOST_DIR)/share/gettext-tiny/config.rpath
 	$(INSTALL) -m 0644 -D $(@D)/extra/Makefile.in.in $(HOST_DIR)/share/gettext-tiny/po/Makefile.in.in
 	$(INSTALL) -m 0644 -D $(@D)/extra/boldquot.sed $(HOST_DIR)/share/gettext-tiny/po/boldquot.sed
